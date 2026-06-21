@@ -16,6 +16,8 @@ while true; do
     break
   fi
 
+  # Show with task id and task description
+  echo "Claude Output: $OUTPUT"
   echo "Task iteration completed. Wiping context and pivoting to next step..."
   sleep 2
 done
