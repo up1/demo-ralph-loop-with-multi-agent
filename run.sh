@@ -19,3 +19,5 @@ while true; do
   echo "Task iteration completed. Wiping context and pivoting to next step..."
   sleep 2
 done
+
+echo "Finished."
