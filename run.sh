@@ -4,7 +4,17 @@ echo "Starting..."
 
 # 1. Plan with agy cli to create TASK.json
 echo "1. Planning with agy..."
-agy -p "/plan Read requirement from file REQ.md and write plan to file TASK.json"
+agy -p "/plan Read requirement from file REQ.md and write plan to file TASK.json with the following format:
+{
+  "tasks": [
+    {
+      "id": 1,
+      "description": "Task description here",
+      "completed": false
+    },
+    ...
+  ]
+}"
 echo "Planning completed. TASK.json created."
 
 # 2. Execute with claude code, using TASK.json as input
