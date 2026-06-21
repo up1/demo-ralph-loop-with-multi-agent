@@ -1,6 +1,6 @@
 # Demo with Ralph loop
 * Plan with Antigravity CLI
-  * Out file => `TASK.json`
+  * Ouput file => `TASK.json`
 * Act with Claude Code
   * Use system prompt in file `PROMPT.md` 
 
