@@ -3,7 +3,7 @@ Your goal is to process ONE task from TASK.json at a time.
 
 CRITICAL WORKFLOW:
 1. Open TASK.json and identify the first task where "completed" is false.
-2. If all tasks are true, output: <promise>COMPLETE</promise> and exit immediately.
+2. If all tasks are true, output: `"completed": true` and exit immediately.
 3. Implement exactly what that task requires. Do not build ahead.
 4. Execute the specific command found in the "verify" property for that task.
 5. If verification succeeds:
