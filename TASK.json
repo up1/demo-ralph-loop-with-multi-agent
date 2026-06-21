@@ -11,7 +11,7 @@
     "name": "Create Express application (app.js)",
     "description": "Create api/app.js which exports an Express application and implements the GET /hello route to return a JSON object: { \"message\": \"Hello, World!\" }.",
     "verify": "node -e \"const app = require('./api/app.js'); if (typeof app.get !== 'function') throw new Error('Not an Express app');\"",
-    "completed": false
+    "completed": true
   },
   {
     "id": 3,
