@@ -3,7 +3,7 @@
 echo "Starting..."
 
 # 1. Plan with agy cli to create TASK.json
-agy plan --input REQ.md --output TASK.json
+agy -p "/plan Read requirement from file REQ.md and write plan to file TASK.json"
 
 while true; do
   # Check if the overall completion token has been written to the console output
