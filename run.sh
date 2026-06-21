@@ -14,7 +14,7 @@ while true; do
   # We pipe PROMPT.md straight into Claude Code to start a clean session
   OUTPUT=$(cat PROMPT.md | claude -p --dangerously-skip-permissions)
 
-  # Check if Claude declared the entire TASK complete all ? at once, by looking for the "completed": true token in the output. If found, break the loop and exit.
+  # Check if Claude declared the entire TASK complete all ?
     if echo "$OUTPUT" | grep -q '"completed": true'; then
         echo "All tasks marked as completed by Claude. Exiting loop."
         break
