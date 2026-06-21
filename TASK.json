@@ -18,6 +18,6 @@
     "name": "Create server entry point (api/index.js)",
     "description": "Create api/index.js that imports the Express app from app.js and starts a server on port 3000, exporting the server instance so it can be verified.",
     "verify": "node -e \"const server = require('./api/index.js'); setTimeout(() => { server.close(); process.exit(0); }, 500);\"",
-    "completed": false
+    "completed": true
   }
 ]
