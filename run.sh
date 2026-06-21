@@ -3,18 +3,22 @@
 echo "Starting..."
 
 # 1. Plan with agy cli to create TASK.json
+echo "1. Planning with agy..."
 agy -p "/plan Read requirement from file REQ.md and write plan to file TASK.json"
+echo "Planning completed. TASK.json created."
 
+# 2. Execute with claude code, using TASK.json as input
+echo "2. Executing with Claude Code..."
 while true; do
   # Check if the overall completion token has been written to the console output
   # We pipe PROMPT.md straight into Claude Code to start a clean session
-  OUTPUT=$(cat PROMPT.md | claude -p)
+  OUTPUT=$(cat PROMPT.md | claude -p --dangerously-skip-permissions)
 
-  # Check if Claude declared the entire PRD complete
-  if [[ "$OUTPUT" == *"<promise>COMPLETE</promise>"* ]]; then
-    echo "Success! All planned tasks are complete."
-    break
-  fi
+  # Check if Claude declared the entire TASK complete all ? at once, by looking for the "completed": true token in the output. If found, break the loop and exit.
+    if echo "$OUTPUT" | grep -q '"completed": true'; then
+        echo "All tasks marked as completed by Claude. Exiting loop."
+        break
+    fi
 
   # Show with task id and task description
   echo "Claude Output: $OUTPUT"
@@ -22,4 +26,4 @@ while true; do
   sleep 2
 done
 
-echo "Finished."
+echo "All tasks completed. Exiting."
