@@ -18,7 +18,7 @@
     "name": "Create Jest unit test (app.test.js)",
     "description": "Create api/app.test.js that imports the application from app.js, uses supertest to call GET /hello, and asserts that status is 200 and the body has message 'Hello, World!'.",
     "verify": "npm --prefix api run test",
-    "completed": false
+    "completed": true
   },
   {
     "id": 4,
